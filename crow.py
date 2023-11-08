@@ -24,13 +24,17 @@ class Coordinates():
         self.latitude = latitude
         self.longitude = longitude
 
-    def get_coords(self):
+    def get_start_coords(self):
         start_coords = {}
-        end_coords = {}
         start_coords['lat']  = round(input("What is the starting latitude?\n"),2)
         start_coords['long'] = round(input("What is the starting longitude?\n"),2)
+        return start_coords
+
+    def get_end_coords(self):
+        end_coords = {}
         end_coords['lat']  = round(input("What is the ending latitude?\n"),2)
         end_coords['long'] = round(input("What is the ending longitude?\n"),2)
+        return end_coords
 
 class Segment(Coordinates):
     def get_distance_of_segment(self, latitude, longitude):
@@ -40,6 +44,6 @@ class Trip(Segment):
     def __init__(self, latitude, longitude):
         pass
 
-    def getDistanceOfTrip(self):
+    def get_distance_of_trip(self):
         pass
 
