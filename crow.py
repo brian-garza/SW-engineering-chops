@@ -17,26 +17,28 @@ print(f'The crow has traveled {miles_seg_length:2,.2f} miles so far')
 ####&&&&########&&&&########&&&&########&&&&########&&&&########&&&&####
 
 class Coordinates():
-    def __init__(self, start_coords, end_coords, latitude, longitude):
+    def __init__(self, start_coords, end_coords):
 
         self.start_coords = start_coords
         self.end_coords = end_coords
-        self.latitude = latitude
-        self.longitude = longitude
 
     def get_start_coords(self):
         start_coords = {}
-        start_coords['lat']  = round(input("What is the starting latitude?\n"),2)
-        start_coords['long'] = round(input("What is the starting longitude?\n"),2)
+        start_coords['lat']  = input("What is the starting latitude?\n")
+        start_coords['long'] = input("What is the starting longitude?\n")
         return start_coords
 
     def get_end_coords(self):
         end_coords = {}
-        end_coords['lat']  = round(input("What is the ending latitude?\n"),2)
-        end_coords['long'] = round(input("What is the ending longitude?\n"),2)
+        end_coords['lat']  = input("What is the ending latitude?\n")
+        end_coords['long'] = input("What is the ending longitude?\n")
         return end_coords
 
 class Segment(Coordinates):
+    def __init__(self, latitude, longitude):
+        self.latitude = latitude
+        self.longitude = longitude
+
     def get_distance_of_segment(self, latitude, longitude):
         pass
 
